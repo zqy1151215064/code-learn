@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			href="
+https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css
+"
+			rel="stylesheet"
+		/>
+		<style>
+			.g-container {
+				width: 300px;
+				position: relative;
+				margin: auto;
+				padding: 5px;
+			}
+
+			.g-container::before {
+				content: '';
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100px;
+				background: linear-gradient(90deg, transparent, #fff);
+				pointer-events: none;
+			}
+
+			ul {
+				width: 300px;
+				display: flex;
+				flex-wrap: nowrap;
+				overflow-x: scroll;
+			}
+			li {
+				margin-right: 10px;
+				border: 1px solid #ccc;
+				padding: 5px;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+
+			li:hover {
+				background: #666;
+				color: #fff;
+			}
+
+			::-webkit-scrollbar {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="g-container">
+			<ul>
+				<li>Button</li>
+				<li>Button</li>
+				<li>Button</li>
+				<li>Button</li>
+				<li>Button</li>
+				<li>Button</li>
+				<li>Button</li>
+				<li>Button</li>
+				<li>Button</li>
+				<li>Button</li>
+			</ul>
+		</div>
+	</body>
+</html>

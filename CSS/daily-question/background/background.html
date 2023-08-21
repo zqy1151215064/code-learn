@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>《CSS技术揭秘与实战通关》- background</title>
+
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+			}
+
+			.box1 {
+				/* 纯色背景 */
+				background: #000;
+			}
+
+			.box2 {
+				/* 线性渐变 */
+				background: linear-gradient(#fff, #000);
+			}
+
+			.box3 {
+				/* 径向渐变 */
+				background: radial-gradient(#fff, #000);
+			}
+
+			.box4 {
+				/* 角向渐变 */
+				background: conic-gradient(#fff, #000);
+			}
+
+			.box5 {
+				/*  渐变直接过渡到另一个颜色 */
+				border: 2px solid #000;
+				background: linear-gradient(#fff 0%, #fff 50%, #f00 50%, #f00 100%);
+			}
+
+			.box6 {
+				/* 三角形 triangle */
+				background: linear-gradient(45deg, red 0%, red 50%, transparent 50%, transparent 100%);
+			}
+
+			.box7 {
+				/* deeppink */
+
+				width: 200px;
+				height: 120px;
+				background: linear-gradient(135deg, transparent 15px, deeppink 0),
+					linear-gradient(-135deg, transparent 15px, deeppink 0), linear-gradient(-45deg, transparent 15px, deeppink 0),
+					linear-gradient(45deg, transparent 15px, deeppink 0);
+				background-size: 50% 50%;
+				background-position: top left, top right, bottom right, bottom left;
+				background-repeat: no-repeat;
+			}
+
+			.box8 {
+				width: 500px;
+				background: repeating-linear-gradient(45deg, #f06a0e, #f06a0e 11px, transparent 11px, transparent 20px);
+			}
+
+			.box9 {
+				width: 400px;
+				height: 400px;
+				background: radial-gradient(#9c27b0 0%, #9c27b0 47%, #ffeb3b 47.3%, #ffeb3b 100%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<div class="box4"></div>
+		<div class="box5"></div>
+		<div class="box6"></div>
+		<div class="box7"></div>
+		<div class="box8"></div>
+		<div class="box9"></div>
+	</body>
+</html>

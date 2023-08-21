@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Service Cards</title>
+		<style>
+			.eits-card-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2em;
+				justify-content: center;
+			}
+
+			.eits-card {
+				width: calc(100% - 2em);
+				max-width: 275px;
+				background-color: #fff;
+				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+				border-radius: 12px;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				aspect-ratio: 2 / 3;
+				position: relative;
+				overflow: hidden;
+				transition: all 0.3s ease-in-out;
+			}
+
+			.eits-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 100%;
+				background: #e76e0d;
+				z-index: 1;
+				transition: bottom 0.5s ease-out;
+			}
+
+			.eits-card::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 55px;
+				background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 100"><path d="M0 100 Q 250 50 500 100 T 1000 100 T 1500 100 T 2000 100 V 0 H 0 Z" fill="%23e76e0d"></path></svg>');
+				background-repeat: repeat-x;
+				background-size: 200% 100%;
+				z-index: 1;
+				transform: translateY(-100%);
+				transition: transform 0.5s ease-out;
+			}
+
+			.eits-card:hover::after {
+				transform: translateY(625%);
+			}
+
+			.eits-card:hover::before {
+				bottom: 10%;
+			}
+
+			.eits-card-content {
+				position: relative;
+				z-index: 2;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+				color: #333;
+				transition: color 0.2s 0.4s;
+			}
+
+			.eits-card-content::before {
+				content: '';
+				position: absolute;
+				left: 25%;
+				right: 25%;
+				height: 3px;
+				background: white;
+				top: calc(32% - 1.5px);
+				z-index: 4;
+				opacity: 0;
+			}
+
+			.eits-card-content:hover::before {
+				opacity: 1;
+				transition: all 0.3s 0.1s;
+			}
+
+			.eits-card:hover .eits-card-content h3,
+			.eits-card:hover .eits-card-content p {
+				color: #fff;
+			}
+
+			.eits-card-content h3,
+			.eits-card-content p {
+				transition: color 0.3s 0.1s;
+			}
+
+			.eits-card h3 {
+				color: #333;
+				margin: auto;
+				padding-bottom: 3px;
+				border-bottom: 0px solid #000;
+				font-size: 25px;
+			}
+
+			.eits-card p {
+				color: #444;
+				margin: 1em 0.7em;
+				margin-top: -35px;
+				font-size: 19px;
+			}
+
+			.eits-icon-background {
+				background: #e76e0d;
+				color: #fff;
+				width: 100%;
+				height: 100px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				z-index: 3;
+			}
+
+			.eits-icon-background i {
+				margin-top: 15px;
+			}
+
+			.eits-wave {
+				position: absolute;
+				bottom: -62px;
+				left: 0;
+				width: 200%;
+				height: 100%;
+				fill: #e76e0d;
+				animation: wave 7.5s infinite linear;
+				z-index: 0;
+				transition: bottom 0.5s ease-out;
+			}
+
+			@keyframes wave {
+				0% {
+					transform: translateX(0%);
+				}
+				100% {
+					transform: translateX(-50%);
+				}
+			}
+
+			.eits-more-info {
+				background-color: #009cff;
+				color: #ffffff;
+				padding: 8px 16px;
+				text-decoration: none;
+				transition: background-color 0.3s ease-in-out;
+				z-index: 3;
+				font-size: 18px;
+			}
+
+			.eits-more-info:hover {
+				background-color: #007abf;
+			}
+
+			.eits-more-info a:hover {
+				color: #fff !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="eits-card-container">
+			<div class="eits-card">
+				<div class="eits-card-content">
+					<div class="eits-icon-background">
+						<svg class="eits-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 100">
+							<path d="M0 100 Q 250 50 500 100 T 1000 100 T 1500 100 T 2000 100 V 0 H 0 Z"></path>
+						</svg>
+						<i class="fas fa-laptop-code fa-3x"></i>
+					</div>
+					<h3>
+						Web <br />
+						Development
+					</h3>
+					<p>
+						Delve into custom web solutions crafted with advanced technology, ensuring your website looks great and
+						functions smoothly.
+					</p>
+					<a href="#" class="eits-more-info">Learn More</a>
+				</div>
+			</div>
+			<div class="eits-card">
+				<div class="eits-card-content">
+					<div class="eits-icon-background">
+						<svg class="eits-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 100">
+							<path d="M0 100 Q 250 50 500 100 T 1000 100 T 1500 100 T 2000 100 V 0 H 0 Z"></path>
+						</svg>
+						<i class="fas fa-laptop-code fa-3x"></i>
+					</div>
+					<h3>
+						Web <br />
+						Design
+					</h3>
+					<p>
+						Elevate your brand's online presence with designs that are visually striking and intuitive, boosting user
+						engagement and experience.
+					</p>
+					<a href="#" class="eits-more-info">Learn More</a>
+				</div>
+			</div>
+			<div class="eits-card">
+				<div class="eits-card-content">
+					<div class="eits-icon-background">
+						<svg class="eits-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 100">
+							<path d="M0 100 Q 250 50 500 100 T 1000 100 T 1500 100 T 2000 100 V 0 H 0 Z"></path>
+						</svg>
+						<i class="fas fa-laptop-code fa-3x"></i>
+					</div>
+					<h3>E-commerce<br />Solutions</h3>
+					<p>
+						Grow your business with strong online storefronts. Our solutions offer smooth navigation, secure
+						transactions, and satisfied customers.
+					</p>
+					<a href="#" class="eits-more-info">Learn More</a>
+				</div>
+			</div>
+			<div class="eits-card">
+				<div class="eits-card-content">
+					<div class="eits-icon-background">
+						<svg class="eits-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 100">
+							<path d="M0 100 Q 250 50 500 100 T 1000 100 T 1500 100 T 2000 100 V 0 H 0 Z"></path>
+						</svg>
+						<i class="fas fa-laptop-code fa-3x"></i>
+					</div>
+					<h3>SEO and<br />Digital Marketing</h3>
+					<p>
+						Boost your online visibility with proven strategies. Our approach guarantees organic growth, better
+						engagement, and enhanced ROI.
+					</p>
+					<a href="#" class="eits-more-info">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
