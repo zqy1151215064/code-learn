@@ -10,8 +10,17 @@
 				width: 400px;
 				height: 160px;
 				margin: 20px auto;
-				/* background-repeat: repeat-y; */
-				background-repeat-x: no-repeat;
+				/* 
+				下面 background 相关配置 表示什么意思
+				1. 200px 18px 表示背景图片的宽高
+				2. 0 0, 200px 0 表示背景图片的位置
+				3. circle at 1px 8px 表示圆心的位置
+				4. transparent 6px 表示圆心的半径
+				5. #f49714 6px 表示圆环的宽度
+				6. #f49714 0px 表示圆环的颜色
+				7. repeat-y 表示背景图片在 y 轴上重复
+				*/
+				background-repeat: repeat-y;
 				background-image: radial-gradient(circle at 1px 8px, transparent 6px, #f49714 6px, #f49714 0px),
 					radial-gradient(circle at 199px 8px, transparent 6px, #f49714 6px, #f49714 0px);
 				background-size: 200px 18px;
